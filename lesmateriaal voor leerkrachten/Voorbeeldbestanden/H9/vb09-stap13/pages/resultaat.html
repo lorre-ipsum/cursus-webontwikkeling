@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="../opmaak/opmaak.css">
+	<title>Je levensloop</title>
+	<script>
+	function weetjes() { 
+		//De geboortedatum uit localStorage halen
+        var geboortedatum = localStorage.getItem("date");
+		document.getElementById("geboortedatum").innerHTML = "Je bent geboren op " + geboortedatum;
+		localStorage.clear();
+		
+		//De dag, maand en jaar splitsen
+		var datumelement = geboortedatum.split('-');
+		var geboortejaar = parseInt(datumelement[0]);
+		var geboortemaand = parseInt(datumelement[1]);
+		var geboortedag = parseInt(datumelement[2]);
+		document.getElementById("geboortedatum").innerHTML = "Je bent geboren op " + geboortedag+'/'+geboortemaand+'/'+geboortejaar;
+		
+		//De weekdag berekenen
+		var datum = new Date();
+		datum.setFullYear(geboortejaar);
+		datum.setMonth(geboortemaand-1);
+		datum.setDate(geboortedag);
+		dagteller = datum.getDay();
+		var weekdagen = ["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"];
+		document.getElementById("weekdag").innerHTML = "Je werd geboren op een "+weekdagen[dagteller]+".";
+
+		//Het aantal geleefde dagen berekenen
+		var dagentotnu = parseInt(Date.now()/86400000);
+		var dagentotdatum = parseInt(datum.getTime()/86400000);
+		var geleefdedagen = dagentotnu - dagentotdatum;
+		document.getElementById("dagengeleefd").innerHTML = "Je hebt al "+geleefdedagen+" dagen geleefd.";
+
+		//Het berekenen van de geslapen tijd
+		var geslapenuren = geleefdedagen * 8;
+		var geslapenjaren = parseInt(geslapenuren/8760);
+		geslapenuren = geslapenuren % 8760;
+		var geslapendagen = parseInt(geslapenuren/24);
+		geslapenuren = geslapenuren % 24;
+		document.getElementById("geslapen").innerHTML = "Je bracht "+geslapenjaren+ " jaren, "+geslapendagen+" dagen en "+geslapenuren+ " uren al slapend door." ;
+		
+		//Het berekenen van het volume verbruikte lucht
+		var verbruiktelucht = 0.4 * 12 * 60 * 24 * geleefdedagen;
+		verbruiktelucht = Math.round(verbruiktelucht/3300)/10;
+		document.getElementById("lucht").innerHTML = "Je ademde al "+verbruiktelucht+ " standaard vrachtcontainers lucht in en uit." ;
+		
+		//Je vermoedelijke sterfdatum uitrekenen
+		var geboorte = parseInt(datum.getTime());
+		var sterven = 29647*24*60*60*1000;
+			/* 81 jaar = 29585 dagen 
+			   29585 dagen + 62 dagen = 29627 dagen
+			   in 81 jaar zitten 20 schrikkeljaren, dus 20 dagen bijtellen
+			   29627 dagen + 20 dagen = 29647 dagen*/		   	
+		var sterfdatum = new Date(datum.getTime() + sterven);
+		var sterfdag = sterfdatum.getDate();
+		var sterfmaand = sterfdatum.getMonth()+1;
+		var sterfjaar = sterfdatum.getFullYear();
+		document.getElementById("sterven").innerHTML = "Je zal vermoedelijk sterven rond "+sterfdag+"/"+sterfmaand+"/"+sterfjaar+" ." ;		
+	}
+	</script>
+</head>
+
+<body onload="weetjes()">
+	<article>
+		<h1>Je levensloop</h1>
+		<table>
+			<tr><td>
+				<p id="geboortedatum"></p>
+				<p id="huidigedatum"></p>
+				<p>&nbsp;</p>
+				<p id="weekdag"></p>
+				<p id="dagengeleefd"></p>
+				<p id="geslapen"></p>
+				<p id="lucht"></p>
+				<p id="sterven"></p>
+			</td></tr>
+		</table>
+	</article>
+	
+	<footer>
+		<p><small>Dit is vb09 bij het <a href="https://www.sleutelboek.eu" target="_blank">Sleutelboek Webontwikkeling</a>.</small></p>
+	</footer>
+	
+</body>
+
+</html>

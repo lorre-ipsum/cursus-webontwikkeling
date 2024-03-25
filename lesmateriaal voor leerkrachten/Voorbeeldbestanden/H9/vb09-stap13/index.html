@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="opmaak/opmaak.css">
+	<title>Je levensloop</title>
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+</head>
+
+<body>
+	<article>
+		<h1>Je levensloop</h1>
+		<form name="leeftijd">
+		<table>
+			<tr>
+				<td class="label"><label for="geboortedatum">Je geboortedatum:</label></td>
+				<td class="invoer"><input type="date" id="geboortedatum" min="1900-01-01" ></td>
+			</tr><tr>
+				<td colspan="2" class="knop">
+					<input type="button" name="submit" id="funfactsknop" value="Fun facts">
+				</td>
+			</tr>
+		</table>
+		</form>
+	</article>
+	
+	<footer>
+		<p><small>Dit is vb09 bij de cursus webontwikkeling.</small></p>
+	</footer>
+	
+	<script>
+	// initialiseren van de funfactsknop als constante
+	const ffbutton = document.querySelector('#funfactsknop');
+	
+	// de resultaatpagina openen 
+	funfacts = () => {
+		const datum = document.leeftijd.geboortedatum.value;
+		localStorage.setItem('date', datum.toString());
+	    location.href = 'pages/resultaat.html';
+	}
+	
+	// De huidige datum als hoogste toegelaten datum instellen
+	maxdatum = () => {
+		const huidigjaar = (new Date()).getFullYear();
+		let huidigemaand = (new Date()).getMonth()+1;
+		let huidigedag = (new Date()).getDate();
+		if (huidigedag < 10) huidigedag = "0"+huidigedag;
+		if (huidigemaand < 10) huidigemaand = "0"+huidigemaand;
+		const huidigedatum = huidigjaar+"-"+huidigemaand+"-"+huidigedag;
+		document.querySelector('#geboortedatum').setAttribute('max', huidigedatum);
+		}
+
+	// de functie funfacts aanroepen als er op de knop wordt geklikt
+	ffbutton.addEventListener('click', funfacts);	 
+
+	// de functie maxdatum aanroepen als de pagina geladen wordt
+	window.addEventListener('load', maxdatum);	 
+	</script> 
+
+</body>
+
+</html>

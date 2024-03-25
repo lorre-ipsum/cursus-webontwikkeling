@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="opmaak/opmaak.css">
+	<title>Tuinaanleg: graszoden leggen</title>
+</head>
+
+<body>
+	<article id="stap1">
+		<h1 id="titel1">1. De grond voorbereiden</h1>
+		<div class="inhoud" id="inhoud1">
+		<p>Verwijder eerst alle begroeiing (struiken, onkruid, ...) en spit vervolgens de grond om.</p>
+		<p><img src="plaatjes/spitten.png" alt="Spitten"></p>
+		</div>
+	</article>
+	
+	<article id="stap2">
+		<h1 id="titel2">2. De grond egaliseren</h1>
+		<div class="inhoud" id="inhoud2">
+		<p>Trap de losgewerkte aarde aan en maak de grond effen - dat heet egaliseren. De grond moet helemaal vlak liggen, zonder putjes. Druk de grond tenslotte aan met een tuinwals.</p>
+		<p><img src="plaatjes/egaliseren.png" alt="Egaliseren"></p>
+		</div>
+	</article>
+	
+	<article id="stap3">
+		<h1 id="titel3">3. De grasmatten leggen</h1>
+		<div class="inhoud" id="inhoud3">
+		<p>Rol de grasmatten zo uit dat ze perfect op elkaar aansluiten. Leg ze in halfsteensverband. Snijd de grasmatten af met een scherp mes of met de spade.</p>
+		<p><img src="plaatjes/leggen.png" alt="Grasmatten leggen"></p>
+		</div>
+	</article>
+	
+	<article id="stap4">
+		<h1 id="titel4">4. De grasmatten sproeien</h1>
+		<div class="inhoud" id="inhoud4">
+		<p>Om de grasmatten wortel te laten schieten, moeten ze de eerste twee weken overvloedig besproeid worden. </p>
+		<p><img src="plaatjes/sproeien.png" alt="Sproeien"></p>
+		</div>
+	</article>
+	
+	<footer>
+		<p><small>Dit is vb10 bij de cursus webontwikkeling.</small></p>
+	</footer>
+	
+	<script>
+	// initialiseren van titels en inhoudsblokken als constanten
+	const titelblok1 = document.querySelector('#titel1');
+	const inhoudsblok1 = document.querySelector('#inhoud1');
+	const titelblok2 = document.querySelector('#titel2');
+	const inhoudsblok2 = document.querySelector('#inhoud2');
+	const titelblok3 = document.querySelector('#titel3');
+	const inhoudsblok3 = document.querySelector('#inhoud3');
+	const titelblok4 = document.querySelector('#titel4');
+	const inhoudsblok4 = document.querySelector('#inhoud4');
+
+	// Een object aanmaken die alle stijlkenmerken van een element bevat
+	stijl = (element) => document.querySelector(element).style;
+	
+	// De inhoud van de eerste stap tonen
+	toon1 = () =>  {
+		stijl('#inhoud1').display='block';
+		stijl('#inhoud2').display='none';
+		stijl('#inhoud3').display='none';
+		stijl('#inhoud4').display='none';
+	}
+	
+	// De inhoud van de tweede stap tonen
+	toon2 = () =>  {
+		stijl('#inhoud2').display='block';
+		stijl('#inhoud1').display='none';
+		stijl('"inhoud3').display='none';
+		stijl('#inhoud4').display='none';
+	}
+	
+	// De inhoud van de derde stap tonen
+	toon3 = () =>  {
+		stijl('#inhoud3').display='block';
+		stijl('#inhoud1').display='none';
+		stijl('#inhoud2').display='none';
+		stijl('#inhoud4').display='none';
+	}
+	
+	// De inhoud van de vierde stap tonen
+	toon4 = () =>  {
+		stijl('#inhoud4').display='block';
+		stijl('#inhoud1').display='none';
+		stijl('#inhoud2').display='none';
+		stijl('#inhoud3').display='none';
+	}
+	
+	// De inhoud van de eerste stap verbergen
+	verberg1 = () =>  stijl('#inhoud1').display='none';
+	
+	// De inhoud van de tweede stap verbergen
+	verberg2 = () =>  stijl('#inhoud2').display='none';
+	
+	// De inhoud van de derde stap verbergen
+	verberg3 = () =>  stijl('#inhoud3').display='none';
+	
+	// De inhoud van de vierde stap verbergen
+	verberg4 = () =>  stijl('#inhoud4').display='none';
+	
+	// de functies voor tonen of verbergen aanroepen
+	titelblok1.addEventListener('click', toon1);	 
+	inhoudsblok1.addEventListener('click', verberg1);	 
+	titelblok2.addEventListener('click', toon2);	 
+	inhoudsblok2.addEventListener('click', verberg2);	 
+	titelblok3.addEventListener('click', toon3);	 
+	inhoudsblok3.addEventListener('click', verberg3);	 
+	titelblok4.addEventListener('click', toon4);	 
+	inhoudsblok4.addEventListener('click', verberg4);	 
+	</script>
+</body>
+
+</html>

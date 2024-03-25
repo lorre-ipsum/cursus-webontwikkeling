@@ -1,0 +1,66 @@
+* {
+	font-family: Verdana, Arial, Verdana, sans-serif;
+	}
+
+body {
+	background-color: #50311d; /*donkerbruin*/
+	}
+
+header, aside, footer, article {
+	display: block;
+	}
+
+header, footer {
+	background-color: white;
+	padding: 5px;
+	}
+
+header {
+	background-image: url("../plaatjes/hoofding.jpg");
+	margin-top: -8px;
+	text-align: center;
+	padding-top: 80px;
+	color: #ffff37; /*geel*/
+	}
+	
+h1 {
+	font-size: 90px;
+	}
+aside {
+	float: right;
+	width: 20%;
+	background-color: #fe7800; /*oranje*/
+	padding: 20px;
+	margin-top: -30px;
+	margin-right: 10px;
+	}
+
+article {
+	float: left;
+	width: 70%;
+	margin: 10px;
+	margin-left: 0px;
+	padding: 10px;
+	background-color: #eea35f;	/*lichtbruin*/
+	}
+	
+footer {
+	clear: both;
+	text-align: center;
+	background-color: #fe7800; /*oranje*/
+	}
+
+p.inleiding {
+	font-style: italic;
+	font-weight: bold;
+	}
+	
+p.citaat {
+	font-style: italic;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+ul{
+	list-style-image: url("../plaatjes/driehoek.png");
+	}

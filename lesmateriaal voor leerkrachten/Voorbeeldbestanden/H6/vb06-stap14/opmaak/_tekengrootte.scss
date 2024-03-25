@@ -1,0 +1,8 @@
+$gewoon: 26px;
+$zeergroot: $gewoon * 2;
+$groot: $gewoon * 1.50;
+$klein: $gewoon * 0.75;
+$zeerklein: $gewoon * 0.50;
+@if $gewoon < 24px {
+	$zeerklein: 12px;
+	} 

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="../opmaak/opmaak.css">
+	<title>Verjaardagsconcert</title>
+</head>
+
+<body>
+	<article>
+		<h1>Verjaardagsconcert</h1>
+		<p>Dankjewel voor de bestelling van je ticket. Je ticket zal voor jou klaar liggen aan de ingang van het concert. Je kan het daar en dan contant betalen. LET OP: je ticket staat op naam en je kan het enkel verkrijgen op vertoon van je identiteitskaart. Niet vergeten mee te brengen, dus!</p>
+		<p>Hier zie je nog een overzicht van je bestelling:</p>
+		<p id="naam"></p>
+		<p id="status"></p>
+		<p id="prijs"></p>
+	</article>
+	
+	<footer>
+		<p><small>Dit is vb08 bij de cursus webontwikkeling.</small></p>
+	</footer>
+	
+	<script>
+	overzicht = () => { 
+		// De naam van de bezoeker op het scherm zetten
+		const besteller = localStorage.getItem("naam");
+		document.querySelector('#naam').innerHTML = "Je naam is: " + besteller;
+    }
+	
+	// de functie overzicht aanroepen als het venster geladen wordt
+	window.addEventListener('load', overzicht);
+	</script> 
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="../opmaak/opmaak.css">
+	<title>SoMa Solar</title>
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li><a href="../index.html"><img src="../plaatjes/logo-sm.png" alt="SoMa logo" class="logo"></a></li>
+			<li><a href="zonnepanelen.html">Zonnepanelen</a></li>
+			<li><a href="plaatsing.html">Plaatsing en service</a></li>
+			<li>Bereken uw behoefte</li>
+			<li><a href="overons.html">Over SoMa Solar</a></li>
+		</ul>
+	</nav>
+	<article>
+		<div class="hoofding">
+			<h1>Bereken uw behoefte</h1>
+		</div>
+		<div>
+			<p><img src="../plaatjes/soma1.jpg" alt="aantal zonnepanelen" class="illustratie">Hoeveel zonnepanelen u nodig heeft hangt af van uw jaarlijks verbruik en het type van zonnepanelen dat u wenst. Hieronder kan u berekenen hoeveel zonnepalenen u nodig heeft. Voorwaarde is wel dat u beschikt over een dak dat op het zuiden is gericht, met een afwijking van maximaal 30°. Is de afwijking groter, dan contacteert u ons best om te bekijken of zonnepanelen op uw dak wel rendabel kunnen zijn.</p>
+			<form id="rekenformulier">
+			<table class="rekentabel">
+				<tr>
+					<td>
+						<p><label for="verbruik">Jaarlijks verbruik (in kWh):</label>
+					</td><td>
+						<p><input type="text" id="verbruik"></p>
+					</td>
+				</tr><tr>
+					<td>
+						<p><label for="paneelkeuze">Gewenste type zonnepaneel: </label>
+					</td><td>
+						<select id="paneelkeuze">
+							<option value="280"> TXS A-280WP </option>
+							<option value="305"> TXS A-305WP </option>
+							<option value="325"> TXS A-325WP </option>
+							<option value="375"> TXS F-375WP </option>
+							<option value="400"> TXS F-400WP </option>
+						</select>
+					</td>
+				</tr><tr>
+					<td colspan="2">
+						<p><input type="checkbox" id="ikbenakkoord"> Ik aanvaard dat de berekening louter indicatief is. SoMa Solar is niet gebonden aan de berekende prijzen.</p>
+					</td>
+				</tr><tr>
+					<td colspan="2">
+						<p class="center"><input type="button" id="rekenknop" value="bereken" disabled></p>
+					</td>
+				</tr><tr>
+					<td colspan="2">
+						<p id="resultaat"></p>
+					</td>
+				</tr>
+			</table>
+			</form>	
+		</div>
+	</article>
+	<footer>
+		<p><small>Dit is vb11 bij de cursus Webontwikkeling.</small></p>
+	</footer>
+	<script>
+	// initialiseren van de constanten
+	const akkoord = document.querySelector('#ikbenakkoord');
+	const rekenen = document.querySelector('#rekenknop');
+
+	// De knop berekenen activeren
+	activeren = () => {
+		if (akkoord.checked) { 
+			rekenen.disabled = false;
+			} else {
+			rekenen.disabled = true;
+			}		
+		}
+	// Aantal zonnepanelen, prijs en dakoppervlak berekenen
+	berekenen = () => {
+		const verbruik = document.querySelector('#verbruik').value;
+		const lijst = document.querySelector('#paneelkeuze');
+		const type = lijst.options[lijst.selectedIndex].value;
+		const aantal = Math.ceil(verbruik * 1.1 / type);
+		switch (type) {
+			case "280" :
+				typenr = "TXS A-280WP";
+				prijs = 420;
+				break;
+			case "305" :
+				typenr = "TXS A-305WP";
+				prijs = 460;
+				break;
+			case "325" :
+				typenr = "TXS A-325WP";
+				prijs = 490;
+				break;
+			case "375" :
+				typenr = "TXS F-375WP";
+				prijs = 610;
+				break;
+			case "400" :
+				typenr = "TXS F-400WP";
+				prijs = 670;
+		}
+		prijs = prijs * aantal;
+		oppervlak = Math.ceil(aantal*1.7);
+		document.querySelector('#resultaat').innerHTML = "Je hebt " + aantal + " " + typenr + " zonnepanelen nodig.<br>De totale kostprijs bedraagt ongeveer " + prijs + ",00 euro.<br>Je hebt een dakoppervlak van minstens " + oppervlak + " vierkante meter nodig.";
+	}
+	
+	akkoord.addEventListener('click', activeren);
+	rekenen.addEventListener('click', berekenen);
+	</script>
+</body>
+
+</html>

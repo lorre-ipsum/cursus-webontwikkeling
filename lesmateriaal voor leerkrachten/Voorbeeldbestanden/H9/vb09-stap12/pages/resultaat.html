@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="../opmaak/opmaak.css">
+	<title>Je levensloop</title>
+</head>
+
+<body>
+	<article>
+		<h1>Je levensloop</h1>
+		<table>
+			<tr><td>
+				<p id="geboortedatum"></p>
+				<p id="huidigedatum"></p>
+				<p>&nbsp;</p>
+				<p id="weekdag"></p>
+				<p id="dagengeleefd"></p>
+				<p id="geslapen"></p>
+				<p id="lucht"></p>
+				<p id="sterven"></p>
+			</td></tr>
+		</table>
+	</article>
+	
+	<footer>
+		<p><small>Dit is vb09 bij de cursus webontwikkeling.</small></p>
+	</footer>
+		
+	<script>
+	weetjes = () => { 
+		//De geboortedatum uit localStorage halen
+        const geboortedatum = localStorage.getItem('date');
+		document.querySelector('#geboortedatum').innerHTML = "Je bent geboren op " + geboortedatum;
+		localStorage.clear();
+		
+		//De dag, maand en jaar splitsen
+		const datumelement = geboortedatum.split('/');
+		const geboortedag = parseInt(datumelement[0]);
+		const geboortemaand = parseInt(datumelement[1]);
+		const geboortejaar = parseInt(datumelement[2]);
+		
+		//De huidige datum berekenen
+		const huidigjaar = (new Date()).getFullYear();
+		const huidigemaand = (new Date()).getMonth()+1;
+		const huidigedag = (new Date()).getDate();
+		document.querySelector('#huidigedatum').innerHTML = "Vandaag is het "+huidigedag+"/"+huidigemaand+"/"+huidigjaar;
+ 
+		//De weekdag berekenen
+		let datum = new Date();
+		datum.setFullYear(geboortejaar);
+		datum.setMonth(geboortemaand-1);
+		datum.setDate(geboortedag);
+		dagteller = datum.getDay();
+		const weekdagen = ["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"];
+		document.querySelector('#weekdag').innerHTML = "Je werd geboren op een "+weekdagen[dagteller]+".";		
+ 
+		//Het aantal geleefde dagen berekenen
+		const dagentotnu = parseInt(Date.now()/86400000);
+		const dagentotdatum = parseInt(datum.getTime()/86400000);
+		const geleefdedagen = dagentotnu - dagentotdatum;
+		document.querySelector('#dagengeleefd').innerHTML = "Je hebt al "+geleefdedagen+" dagen geleefd.";		
+
+		//Het berekenen van de geslapen tijd
+		let geslapenuren = geleefdedagen * 8;
+		const geslapenjaren = parseInt(geslapenuren/8760);
+		geslapenuren = geslapenuren % 8760;
+		const geslapendagen = parseInt(geslapenuren/24);
+		geslapenuren = geslapenuren % 24;
+		document.querySelector('#geslapen').innerHTML = "Je bracht "+geslapenjaren+ " jaren, "+geslapendagen+" dagen en "+geslapenuren+ " uren al slapend door." ;
+		
+		//Het berekenen van het volume verbruikte lucht
+		let verbruiktelucht = 0.4 * 12 * 60 * 24 * geleefdedagen;
+		verbruiktelucht = Math.round(verbruiktelucht/3300)/10;
+		document.querySelector('#lucht').innerHTML = "Je ademde al "+verbruiktelucht+ " standaard vrachtcontainers lucht in en uit." ;
+		
+		//Je vermoedelijke sterfdatum uitrekenen
+		const geboorte = parseInt(datum.getTime());
+		const sterven = 29647*24*60*60*1000;
+			/* 81 jaar = 29585 dagen 
+			   29585 dagen + 62 dagen = 29627 dagen
+			   in 81 jaar zitten 20 schrikkeljaren, dus 20 dagen bijtellen
+			   29627 dagen + 20 dagen = 29647 dagen*/		   	
+		const sterfdatum = new Date(datum.getTime() + sterven);
+		const sterfdag = sterfdatum.getDate();
+		const sterfmaand = sterfdatum.getMonth()+1;
+		const sterfjaar = sterfdatum.getFullYear();
+		document.querySelector('#sterven').innerHTML = "Je zal vermoedelijk sterven rond "+sterfdag+"/"+sterfmaand+"/"+sterfjaar+"." ;		
+	}
+	
+	// de functie weetjes aanroepen als het venster geladen wordt
+	window.addEventListener('load', weetjes);
+	</script> 
+
+</body>
+
+</html>

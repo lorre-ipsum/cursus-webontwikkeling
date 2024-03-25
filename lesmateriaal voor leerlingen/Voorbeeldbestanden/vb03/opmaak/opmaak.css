@@ -1,0 +1,38 @@
+footer, header {
+	text-align: center;
+	background-color: white;
+	}
+
+div#inhoud {
+	margin: auto;
+	width: 1000px;
+	}
+
+div#land {
+	width: 1000px;
+	position: relative;
+	}
+	
+article {
+	float: left;
+	width: 500px;
+	height: 350px;
+	position: relative;
+	background-color: white;
+	}
+	
+figure {
+	margin-left: 530px;
+	width: 470px;
+	height: 350px;
+	position: relative;
+	text-align: center;
+	}
+	
+img.vlag {
+	float: right;
+	margin: 10px;
+	border: 1px;
+	border-style: solid;
+	border-color: black; 
+	}

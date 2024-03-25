@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="../opmaak/opmaak.css">
+	<title>Verjaardagsconcert</title>
+</head>
+
+<body>
+	<article>
+		<h1>Verjaardagsconcert</h1>
+		<form name="bestellen">
+		<table>
+			<tr>
+				<td><label for="naam">Naam:</label></td>
+				<td><input type="text" id="naam"></td>
+			</tr><tr>
+				<td><label for="status">Ik ben:</label></td>
+				<td><input type="checkbox" name="status" id="status" value="leerling">Leerling<br>
+				<input type="checkbox" name="status" value="oud-leerling">Oud-leerling<br>
+				<input type="checkbox" name="status" value="leerkracht">Leerkracht<br>
+				<input type="checkbox" name="status" value="oud-leerkracht">Oud-leerkracht<br>
+				<input type="checkbox" name="status" value="niet">Andere
+				</td>
+			</tr><tr>
+				<td colspan="2" id="knop">
+					<input type="button" name="submit" value="Bestellen" id="bestelknop">
+				</td>
+			</tr>
+		</table>
+		</form>
+	</article>
+	
+	<footer>
+		<p><small>Dit is vb08 bij de cursus webontwikkeling.</small></p>
+	</footer>
+	
+	<script>
+	// initialiseren van de bestelknop als constante
+	const bestelbutton = document.querySelector('#bestelknop');
+	
+	// de keuze uitlezen
+	bestelling = () => { 
+		// De naam van de bezoeker lezen
+		const besteller = document.bestellen.naam.value;
+		
+		// De waarde van de gekozen opties lezen en de prijs berekenen
+		let vakjes = document.bestellen.status;
+		let keuze= "";
+		let prijs = 20;
+		for (let teller=0; teller<vakjes.length; teller++) {
+			if (vakjes[teller].checked) {
+				if (keuze !== "") keuze = keuze + " en ";
+				keuze = keuze + vakjes[teller].value;
+				switch (teller) {
+					case 0 :
+						prijs = prijs - 5;
+						break;
+					case 1 :
+					case 3 :
+						prijs = prijs - 7.5;
+						break;
+					case 2 :
+						prijs = prijs - 10;
+				}	
+			}
+		}
+		
+		// Het resultaat in een informatievenster tonen
+		alert("Dag " + besteller + ", je betaalt "  + prijs + " euro omdat je " + keuze + " van onze school bent!"); 
+     }
+	
+	// de functie bestelling aanroepen als er op de knop wordt geklikt
+	bestelbutton.addEventListener('click', bestelling);
+	</script> 
+
+</body>
+
+</html>

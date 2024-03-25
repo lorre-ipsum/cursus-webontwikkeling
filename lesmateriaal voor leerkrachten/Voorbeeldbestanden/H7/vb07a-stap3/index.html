@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="opmaak/opmaak.css">
+	<title>Wat word ik later?</title>
+
+	<script>
+		// initialiseren van variabelen
+		let naam = prompt('wat is de naam? kies uit jan, piet, joris en corneel.', 'naam ingeven');
+
+		// tekst op het document
+		switch (naam) {
+			case 'corneel' :
+				beroep = 'boer';
+				break;
+			case 'jan' :
+				beroep = 'piloot';
+				break;
+			case 'piet' :
+				beroep = 'tuinman';
+				break;
+			case 'joris' :
+				beroep = 'webdesigner';
+				break;
+			default :
+				naam = 'anders';
+				beroep = 'niets';
+		}
+		document.write('<article><h1>wat word ik later?</h1></article>');
+		document.write('<p><img src="plaatjes/' +naam+ '.jpg" alt="ik word later ' +beroep+ '" title="ik word later ' +beroep+ '"></p>');
+		document.write('<p>ik heet ' +naam+ ' en ik word later ' +beroep+ '</p>');
+		document.write('<footer><p><small>Dit is vb07a bij de cursus webontwikkeling</a>.</small></p></footer>');
+	</script>
+	
+	</head>
+
+<body>
+</body>
+
+</html>
+
+

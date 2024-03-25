@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="opmaak/opmaak.css">
+	<title>Verjaardagsconcert</title>
+</head>
+
+<body>
+	<article>
+		<h1>Verjaardagsconcert</h1>
+		<p>Onze school bestaat dit jaar 100 jaar. En dat willen we vieren. Daarom organiseren we op 30 mei een megaconcert waarop een aantal van onze leerlingen en oud-leerlingen het beste van zichzelf zullen geven. Als klap op de vuurpijl sluiten we af met een spetterend optreden van The Jack - de coverband waarvan onze muzieklerares, mevrouw Verrijckt, de frontvrouw is.</p>
+		<p>Tickets voor dit evenement kosten 20 euro. Leerlingen van onze school krijgen een korting van 5 euro. Voor oud-leerlingen en oud-leerkrachten is er een korting van 7,5 euro en leerkrachten krijgen zelfs 10 euro korting.</p>
+		<p id="knop">Bestel je ticket<p>
+	</article>
+	
+	<footer>
+		<p><small>Dit is vb08 bij de cursus webontwikkeling.</small></p>
+	</footer>
+	
+	<script>
+	// initialiseren van het invoerveld als constante
+	const bestelknop = document.querySelector('#knop');
+	
+	// de nieuwe pagina openen als op de knop geklikt wordt
+	openen = () => location='pages/bestel.html';
+	
+	bestelknop.addEventListener('click', openen);
+	</script> 
+
+</body>
+
+</html>

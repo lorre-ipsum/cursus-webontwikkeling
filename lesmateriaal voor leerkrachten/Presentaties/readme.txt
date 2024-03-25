@@ -1,0 +1,1 @@
+Om de presentaties correct te kunnen bekijken, moet het lettertype Code New Roman op je computer geïnstalleerd zijn. Je vindt dit lettertype in het bijgevoegde zip-bestand.

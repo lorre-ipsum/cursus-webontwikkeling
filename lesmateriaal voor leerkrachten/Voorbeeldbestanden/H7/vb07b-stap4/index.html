@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="opmaak/opmaak.css">
+	<title>Rekenen</title>
+</head>
+
+<body>
+	<article>
+		<h2>Rekenen</h2>
+		<form name="rekenform">
+			<script>
+			// Willekeurige getallen berekenen
+			let getal1 = Math.round(Math.random()*10);
+			let getal2 = Math.round(Math.random()*10);
+			
+			// Som op het scherm zetten
+			document.write('<label for="som">'+getal1+' + '+getal2+' = </label>');
+			var correct = getal1 + getal2;
+			</script>
+			<input type="text" id="som" value=""> 
+		</form>
+	</article>
+	<footer>
+		<p><small>Dit is vb07b bij de cursus webontwikkeling.</small></p>
+	</footer>
+	
+	<script>
+	// initialiseren van het invoerveld als constante
+	const invoerveld = document.querySelector('#som');
+	
+	// Nagaan of de uitkomst correct is of niet
+	uitrekenen = () => {
+	let uitkomst = invoerveld.value;
+	 switch (true) {
+		case isNaN(uitkomst) :
+			alert("Dit is geen getal!");
+			break;
+		case (uitkomst == 9) :
+			alert("Joepie! Dit is correct!");
+			break;
+		case (uitkomst > 9) :
+			alert("Jammer, dit is fout. Het getal dat je ingaf is te hoog.");
+			break;
+		case (uitkomst < 9) :
+			alert("Jammer, dit is fout. Het getal dat je ingaf is te laag.");
+	 	}
+	}
+	
+	// de functie uitrekenen aanroepen als de waarde van invoerveld wijzigt
+	invoerveld.addEventListener('change', uitrekenen);
+	</script> 
+
+
+</body>
+
+</html>

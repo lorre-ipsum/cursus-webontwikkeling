@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+body {
+	background-image: linear-gradient(to right bottom, black, purple);
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: Comfortaa;
+	color: white;
+	}
+
+h1 {
+    text-align: center;
+	font-size: 60px;
+	}
+
+p, table {
+	font-size: 24px;
+}	
+
+footer {
+	margin-top: 100px;
+	background-color: black;
+	padding: 5px;
+	clear: both;
+	position: absolute; 
+	bottom: 20px;
+	width: 100%;
+	}
+	
+footer p {
+	text-align: center;
+	font-size: 20px;
+	}
+
+a {
+	color: white;
+	}
+	
+table {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td.label {
+	width: 450px;
+	height: 70px;
+}
+
+td.invoer {
+	width: 150px;
+	height: 70px;
+}
+
+td.knop {
+	text-align: center;
+	height: 150px;
+}
+
+input[type=text] {
+	width: 150px;
+    font-family: Comfortaa;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+input[type=button] {
+    background-color: white;
+	color: black;
+	width: 150px;
+    font-family: Comfortaa;
+	font-size: 24px;
+	font-weight: bold;
+    border-radius: 5px;
+	padding: 10px;
+	border: 0px;
+}
+
+input[type=button]:hover {
+    background-color: black;
+	color: white;
+	border: 1px solid;
+	border-color: white;
+	cursor: pointer; 
+}

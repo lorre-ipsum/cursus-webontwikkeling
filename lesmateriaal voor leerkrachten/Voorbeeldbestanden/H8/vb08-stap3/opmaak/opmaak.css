@@ -1,0 +1,107 @@
+@font-face {
+    font-family: titel;
+    src: url('titel.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: tekst;
+    src: url('tekst.ttf') format('truetype');
+}
+
+body {
+	background-image: url("../plaatjes/concert.jpg");
+	background-size: cover;	
+	background-attachment: fixed;
+	color: white;
+	}
+
+footer, article {
+	display: block;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	}
+	
+h1 {
+    text-align: center;
+    font-family: titel;
+	font-size: 60px;
+	}
+
+p, table {
+    font-family: tekst;
+	font-size: 24px;
+	text-align: justify;
+}	
+
+footer {
+	margin-top: 100px;
+	background-color: black;
+	padding: 5px;
+	clear: both;
+	position: absolute; 
+	bottom: 20px;
+	}
+	
+footer p {
+	text-align: center;
+    font-family: tekst;
+	font-size: 20px;
+	}
+
+p#knop {
+	text-align: center;
+	border: 1px solid;
+    border-radius: 30px;
+	padding: 10px;
+	width: 250px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	font-weight: bold;
+}
+
+a {
+	color: white;
+	}
+	
+p#knop:hover, input[type=button]:hover {
+	background-color: black;
+	cursor: pointer;
+}
+	
+table {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td {
+	width: 200px;
+	height: 70px;
+}
+
+select, input[type=text] {
+	width: 200px;
+    font-family: tekst;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+td#knop {
+	text-align: center;
+	height: 150px;
+}
+
+input[type=button] {
+    background-color: Transparent;
+	color: white;
+	width: 150px;
+    font-family: tekst;
+	font-size: 24px;
+	font-weight: bold;
+    border-radius: 30px;
+	padding: 10px;
+	border: 1px solid;
+}

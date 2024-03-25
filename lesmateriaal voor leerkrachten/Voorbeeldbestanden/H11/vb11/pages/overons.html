@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="../opmaak/opmaak.css">
+	<title>SoMa Solar</title>
+</head>
+
+<body>
+	<div id="overlay1" class="overlay">
+		<div class="overlayinhoud"><p id="afbeelding"></p>
+			<p id="sluitknop"></p>
+			<p class="center"><input type="button" value="sluiten" class="sluiten" id="sluit"></p>
+		</div>
+	</div>
+	<div id="pagina">
+		<nav>
+			<ul>
+				<li><a href="../index.html"><img src="../plaatjes/logo-sm.png" alt="SoMa logo" class="logo"></a></li>
+				<li><a href="zonnepanelen.html">Zonnepanelen</a></li>
+				<li><a href="plaatsing.html">Plaatsing en service</a></li>
+				<li><a href="bereken.html">Bereken uw behoefte</a></li>
+				<li>Over SoMa Solar</li>
+			</ul>
+		</nav>
+		<article>
+			<div class="hoofding">
+				<h1>Over ons</h1>
+			</div>
+			<div>
+				<p><img src="../plaatjes/soma3.jpg" alt="Soren Maartens" class="illustratie">Nadat Soren Maartens tien jaar geleden afstudeerde als elektricien (specialisatie industriële installaties), ging hij aanvankelijk werken in dienst van STF Power, een grote regionale installateur van zonnepanelen en warmtepompen. Twee jaar later begon hij te werken als zelfstandig installateur van zonnepanelen, aanvankelijk voornamelijk als onderaannemer van STF Power. Geleidelijk aan echter bouwde Soren een eigen clienteel uit.</p>
+				<p>Wanneer drie jaar later STF Power in financiële moeilijkheden komt en het bedrijf op de fles gaat, neemt Soren de zonnepanelen-activiteiten van STF Power over. In een klap groeide de eenmanszaak tot een onderneming met 12 werknemers. SoMa Solar was geboren.</p>
+				<p>Op dit ogenblik stelt SoMa Solar 27 mensen tewerk en is het de grootste installateur van zonnepalen in de ruime regio. Vorig jaar kreeg Soren Maartens, dan nog geen 30 jaar oud, de titel "Jonge ondernemer van het jaar".</p>
+				<p id="resultaat">SoMa Solar<br>
+				Heerweg 24<br>
+				1234 Onderwijk<br>
+				e-mail: info@somasolar.eu<br>
+				tel: (012)34 56 78</p>
+			</div>
+		</article>
+		<article>
+			<h3>Bekijk hier enkele van onze recente realisaties:</h3>
+			<p><img src="../plaatjes/foto1k.jpg" alt="Een foto van een van onze realisaties" id="foto1" class="thumbnail">
+			<img src="../plaatjes/foto2k.jpg" alt="Een foto van een van onze realisaties" id="foto2" class="thumbnail">
+			<img src="../plaatjes/foto3k.jpg" alt="Een foto van een van onze realisaties" id="foto3" class="thumbnail">
+			<img src="../plaatjes/foto4k.jpg" alt="Een foto van een van onze realisaties" id="foto4" class="thumbnail">
+			<img src="../plaatjes/foto5k.jpg" alt="Een foto van een van onze realisaties" id="foto5" class="thumbnail">
+			<img src="../plaatjes/foto6k.jpg" alt="Een foto van een van onze realisaties" id="foto6" class="thumbnail">
+			<img src="../plaatjes/foto7k.jpg" alt="Een foto van een van onze realisaties" id="foto7" class="thumbnail">
+			<img src="../plaatjes/foto8k.jpg" alt="Een foto van een van onze realisaties" id="foto8" class="thumbnail">
+			<img src="../plaatjes/foto9k.jpg" alt="Een foto van een van onze realisaties" id="foto9" class="thumbnail">
+			<img src="../plaatjes/foto10k.jpg" alt="Een foto van een van onze realisaties" id="foto10" class="thumbnail">
+			</p>
+		</article>
+		<footer>
+			<p><small>Dit is vb11 bij de cursus Webontwikkeling.</small></p>
+		</footer>
+	</div>
+	
+	<script>
+	// initialiseren van de constanten
+	const foto1 = document.querySelector('#foto1');
+	const foto2 = document.querySelector('#foto2');
+	const foto3 = document.querySelector('#foto3');
+	const foto4 = document.querySelector('#foto4');
+	const foto5 = document.querySelector('#foto5');
+	const foto6 = document.querySelector('#foto6');
+	const foto7 = document.querySelector('#foto7');
+	const foto8 = document.querySelector('#foto8');
+	const foto9 = document.querySelector('#foto9');
+	const foto10 = document.querySelector('#foto10');
+	const sluitknop = document.querySelector('#sluit');
+	
+	//De foto's vergroten
+	stijl = (element) => {
+		return document.querySelector(element).style;
+	}
+	vergroot1 = () => {
+		document.querySelector('#afbeelding').innerHTML = "<img src='../plaatjes/foto1.jpg' alt='Een foto van een van onze realisaties'>"
+		stijl('#overlay1').display='block';
+	}
+	vergroot2 = () => {
+		document.querySelector('#afbeelding').innerHTML = "<img src='../plaatjes/foto2.jpg' alt='Een foto van een van onze realisaties'>"
+		stijl('#overlay1').display='block';
+	}
+	vergroot3 = () => {
+		document.querySelector('#afbeelding').innerHTML = "<img src='../plaatjes/foto3.jpg' alt='Een foto van een van onze realisaties'>"
+		stijl('#overlay1').display='block';
+	}
+	vergroot4 = () => {
+		document.querySelector('#afbeelding').innerHTML = "<img src='../plaatjes/foto4.jpg' alt='Een foto van een van onze realisaties'>"
+		stijl('#overlay1').display='block';
+	}
+	vergroot5 = () => {
+		document.querySelector('#afbeelding').innerHTML = "<img src='../plaatjes/foto5.jpg' alt='Een foto van een van onze realisaties'>"
+		stijl('#overlay1').display='block';
+	}
+	vergroot6 = () => {
+		document.querySelector('#afbeelding').innerHTML = "<img src='../plaatjes/foto6.jpg' alt='Een foto van een van onze realisaties'>"
+		stijl('#overlay1').display='block';
+	}
+	vergroot7 = () => {
+		document.querySelector('#afbeelding').innerHTML = "<img src='../plaatjes/foto7.jpg' alt='Een foto van een van onze realisaties'>"
+		stijl('#overlay1').display='block';
+	}
+	vergroot8 = () => {
+		document.querySelector('#afbeelding').innerHTML = "<img src='../plaatjes/foto8.jpg' alt='Een foto van een van onze realisaties'>"
+		stijl('#overlay1').display='block';
+	}
+	vergroot9 = () => {
+		document.querySelector('#afbeelding').innerHTML = "<img src='../plaatjes/foto9.jpg' alt='Een foto van een van onze realisaties'>"
+		stijl('#overlay1').display='block';
+	}
+	vergroot10 = () => {
+		document.querySelector('#afbeelding').innerHTML = "<img src='../plaatjes/foto10.jpg' alt='Een foto van een van onze realisaties'>"
+		stijl('#overlay1').display='block';
+	}
+	sluiten = () => {
+		stijl('#overlay1').display='none';
+	}
+	
+	//de juiste functie aanroepen
+	foto1.addEventListener('click', vergroot1);
+	foto2.addEventListener('click', vergroot2);
+	foto3.addEventListener('click', vergroot3);
+	foto4.addEventListener('click', vergroot4);
+	foto5.addEventListener('click', vergroot5);
+	foto6.addEventListener('click', vergroot6);
+	foto7.addEventListener('click', vergroot7);
+	foto8.addEventListener('click', vergroot8);
+	foto9.addEventListener('click', vergroot9);
+	foto10.addEventListener('click', vergroot10);
+	sluitknop.addEventListener('click', sluiten);
+	</script>
+
+</body>
+
+</html>

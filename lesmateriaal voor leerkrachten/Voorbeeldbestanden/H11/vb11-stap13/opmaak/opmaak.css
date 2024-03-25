@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body {
+	font-family: Quicksand;
+	}
+
+nav {
+    font-size: 20px;
+	width: 100%;
+	background-color: #FF6A00; /* fel oranje */
+	margin-bottom: 50px;
+	}
+
+.nav-item {
+	margin-right: 15px;
+	}
+
+img.logo {
+	float: left;
+	margin-top: -30px;
+	}
+
+img.illustratie {
+	height: 300px;
+	width: 400px;
+	float: right;
+	}
+
+.jumbotron  {
+	padding: 30px;
+	background-image: url("../plaatjes/zon.jpg");
+	background-size: cover;	
+	margin-bottom: 50px;
+	}
+
+h1 {
+	font-size: 80px;
+	}
+
+h2 {
+	font-size: 50px;
+	}
+
+h3 {
+	font-size: 16px;
+	font-weight: normal;
+	}
+
+table {
+	margin: auto;
+	}
+
+thead {
+	font-size: 20px;
+	font-weight: bold;
+	}
+	
+table.table-sm {
+	width: 960px;
+}
+
+td.f {
+	background-color: #ffc9a3;
+	}
+
+#verbruik, #paneelkeuze, #bereken, .sluiten {
+	font-family: Quicksand;
+	font-size: 18px;
+	color: #CF5600;
+	width: 150px;
+	}
+
+.open {
+	font-family: Quicksand;
+	font-size: 18px;
+	color: #CF5600;
+	width: 400px;
+	}
+
+.innerform {
+	margin-top: 0.5em;
+}
+
+#akkoord {
+	height: 55px;
+	width: 55px;
+	float: left;
+	margin-right: 20px;
+	}
+
+#resultaat {
+	font-weight: bold;
+	}
+
+.center {
+	text-align: center;
+	}
+
+.overlay {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.7);
+	z-index: 2;
+	}
+
+.overlayinhoud {
+	position: absolute;
+	background-color: white;
+	padding: 25px;
+	width: 800px;
+	height: 800px;
+	top: 50%;
+	left: 50%;
+	font-size: 50px;
+	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	}
+
+.pagina {
+	z-index: 1;
+	}
+
+.footer {
+	margin-top: 50px;
+	background-color: #FF6A00; /* fel oranje */
+	padding: 2px;
+	margin-left: 0px;
+	margin-right: 0px;
+	}
+	
+.footer p {
+	margin: auto;
+	font-size: 20px;
+	color: white;
+	}

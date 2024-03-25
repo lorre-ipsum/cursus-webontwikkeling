@@ -1,0 +1,48 @@
+body {
+	background-image: url("../plaatjes/meer.jpg");
+	background-size: cover;	
+	background-attachment: fixed;
+	}
+
+div#inhoud {
+	margin: auto;
+	width: 800px;
+	}
+
+header, footer, article {
+	position: relative;
+	display: block;
+	font-family: Trebuchet, Trebuchet MS, Verdana;
+	text-align: center;
+	opacity: 0.75;
+	background-color: white;
+	padding: 5px;
+	margin: 10px;
+	}
+
+table {
+	margin: auto;
+	}
+	
+table, td, th {
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	}
+
+td, th {
+	width: 100px;
+}
+
+th {
+	background-color: #448DAE;
+	color: white;
+	}
+	
+footer {
+	clear: both
+	}
+	
+img {
+	height: 100px;
+	width: 100px}

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="../opmaak/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../opmaak/opmaak.css">
+	<link rel="shortcut icon" type="image/png" href="../plaatjes/favicon.png">
+	<title>SoMa Solar</title>
+	<script src="../scripts/jquery.js"></script>
+	<script src="../scripts/bootstrap.js"></script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand" href="../index.html">
+				<img src="../plaatjes/logo-sm.png" alt="SoMa logo" class="logo">
+			</a>
+			<div class="collapse navbar-collapse" id="menubalk">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a href="zonnepanelen.html" class="nav-link">Zonnepanelen</a>
+					</li>
+					<li class="nav-item">
+						<a href="plaatsing.html" class="nav-link">Plaatsing en service</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link">Bereken uw behoefte</a>
+					</li>
+					<li class="nav-item">
+						<a href="overons.html" class="nav-link">Over SoMa Solar</a>
+					</li>
+				</ul>
+			</div>
+			<button class="navbar-toggler" type="button"
+					data-toggle="collapse"
+					data-target="#menubalk"
+					aria-controls="menubalk" 
+					aria-expanded="false" 
+					aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</nav>
+		<div class="jumbotron">
+			<h1 class="display-1">Bereken uw behoefte</h1>
+		</div>
+		<div class="row">
+			<div class="col-9">
+				<p>Hoeveel zonnepanelen u nodig heeft hangt af van uw jaarlijks verbruik en het type van zonnepanelen dat u wenst. Hieronder kan u berekenen hoeveel zonnepalenen u nodig heeft. Voorwaarde is wel dat u beschikt over een dak dat op het zuiden is gericht, met een afwijking van maximaal 30°. Is de afwijking groter, dan contacteert u ons best om te bekijken of zonnepanelen op uw dak wel rendabel kunnen zijn.</p>
+				<div class="row justify-content-center">
+					<div class="col-xl-4 col-lg-6 col-md-8 col-sm-10 col-xs-12">	
+						<form id="rekenformulier">
+							<div class="row form-group">
+								<label for="verbruik" class="col-6 text-right">Jaarlijks verbruik (in kWh):</label>
+								<div class="col-6">
+									<input type="text" id="verbruik">
+								</div>
+							</div>
+							<div class="row form-group">
+								<label for="paneelkeuze" class="col-6 text-right">Gewenste type zonnepaneel: </label>
+								<div class="col-6">
+									<select id="paneelkeuze">
+										<option value="280"> TXS A-280WP </option>
+										<option value="305"> TXS A-305WP </option>
+										<option value="325"> TXS A-325WP </option>
+										<option value="375"> TXS F-375WP </option>
+										<option value="400"> TXS F-400WP </option>
+									</select>
+								</div>
+							</div>
+							<div class="row form-group ">
+								<div class="col-2">
+									<input type="checkbox" id="ikbenakkoord">
+								</div>
+								<div class="col-10">
+									Ik aanvaard dat de berekening louter indicatief is. SoMa Solar is niet gebonden aan de berekende prijzen.
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-12">
+									<p class="center"><input type="button" id="rekenknop" value="bereken" disabled></p>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-12">
+									<p id="resultaat"></p>
+								</div>
+							</div>
+						</form>	
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<img src="../plaatjes/soma1.jpg" alt="aantal zonnepanelen" class="img-fluid">
+			</div>
+		</div>
+		<div class="row footer">
+		<p><small>Dit is vb11 bij de cursus Webontwikkeling.</small></p>
+		</div>
+	</div>
+	<script>
+	// initialiseren van de constanten
+	const akkoord = document.querySelector('#ikbenakkoord');
+	const rekenen = document.querySelector('#rekenknop');
+
+	// De knop berekenen activeren
+	activeren = () => {
+		if (akkoord.checked) { 
+			rekenen.disabled = false;
+			} else {
+			rekenen.disabled = true;
+			}		
+		}
+	// Aantal zonnepanelen, prijs en dakoppervlak berekenen
+	berekenen = () => {
+		const verbruik = document.querySelector('#verbruik').value;
+		const lijst = document.querySelector('#paneelkeuze');
+		const type = lijst.options[lijst.selectedIndex].value;
+		const aantal = Math.ceil(verbruik * 1.1 / type);
+		switch (type) {
+			case "280" :
+				typenr = "TXS A-280WP";
+				prijs = 420;
+				break;
+			case "305" :
+				typenr = "TXS A-305WP";
+				prijs = 460;
+				break;
+			case "325" :
+				typenr = "TXS A-325WP";
+				prijs = 490;
+				break;
+			case "375" :
+				typenr = "TXS F-375WP";
+				prijs = 610;
+				break;
+			case "400" :
+				typenr = "TXS F-400WP";
+				prijs = 670;
+		}
+		prijs = prijs * aantal;
+		oppervlak = Math.ceil(aantal*1.7);
+		document.querySelector('#resultaat').innerHTML = "Je hebt " + aantal + " " + typenr + " zonnepanelen nodig.<br>De totale kostprijs bedraagt ongeveer " + prijs + ",00 euro.<br>Je hebt een dakoppervlak van minstens " + oppervlak + " vierkante meter nodig.";
+	}
+	
+	akkoord.addEventListener('click', activeren);
+	rekenen.addEventListener('click', berekenen);
+	</script>
+</body>
+
+</html>

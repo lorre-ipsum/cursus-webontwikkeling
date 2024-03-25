@@ -1,0 +1,48 @@
+@font-face {
+    font-family: lettertype;
+    src: url(quikhand.ttf);
+}
+
+body {
+	background-image: url("../plaatjes/achtergrond.png");
+	background-size: cover;	
+	background-attachment: fixed;
+	font-family: lettertype;
+	color: white;
+	}
+
+article {
+	position: relative;
+	display: block;
+	padding: 5px;
+	margin-top: 70px;
+	left: 50%;
+	font-size: 36pt;
+	width: 40%
+	}
+
+footer {
+	position: relative;
+	display: block;
+	padding: 5px;
+	margin-top: 70px;
+	left: 50%;
+	font-size: 18pt;
+	width: 40%
+	}
+
+a {
+	text-decoration: none;
+	color: yellow;
+	}
+
+a:hover {
+	color: red;
+	}
+
+input[type=text] {
+	font-family: lettertype;
+	font-size: 36pt;	
+	color: green;
+	width: 40px;
+}

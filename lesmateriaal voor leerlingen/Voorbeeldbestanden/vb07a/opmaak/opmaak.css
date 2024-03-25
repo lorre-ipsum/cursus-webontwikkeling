@@ -1,0 +1,48 @@
+@font-face {
+    font-family: goofy;
+    src: url('goofy.ttf') format('truetype');
+}
+
+body {
+	background-color: #00FF7F; /*SpringGreen*/
+	color: #008080; /*Teal*/
+	}
+
+footer, article {
+	display: block;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	}
+	
+h1 {
+    text-align: center;
+	font-family: goofy;
+	font-size: 80px;
+	}
+
+p {
+    font-family: goofy;
+	font-size: 50px;
+	text-align: center;
+}	
+
+img {
+	height: 300px;
+	width: 450px;
+	box-shadow:10px 10px 20px Teal;
+	}
+
+footer {
+	margin-top: 100px;
+	background-color: #008080; /*Teal*/
+	color: #00FF7F; /*SpringGreen*/
+	padding: 5px;
+	clear: both;
+	}
+	
+footer p {
+	text-align: center;
+	font-size: 30px;
+	}
+	

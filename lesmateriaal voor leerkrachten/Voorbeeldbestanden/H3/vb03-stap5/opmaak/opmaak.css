@@ -1,0 +1,58 @@
+@font-face {
+  font-family: chant;
+  src: url(chanticleer.ttf);
+}
+
+body {
+	background-image: url("../plaatjes/water.jpg");
+	background-repeat: repeat;	
+	background-attachment: fixed;
+	font-family: chant;
+}
+
+footer, header {
+	text-align: center;
+	padding: 10px;
+	}
+
+div#inhoud {
+	margin: auto;
+	width: 1000px;
+	background-color: #ffc689; /*zacht oranje*/
+	padding: 10px;
+	}
+
+div#land {
+	width: 1000px;
+	position: relative;
+	}
+	
+article {
+	float: left;
+	width: 500px;
+	height: 350px;
+	position: relative;
+	}
+	
+figure {
+	margin-left: 530px;
+	width: 470px;
+	height: 350px;
+	position: relative;
+	text-align: center;
+	}
+
+figure img {
+	height: 300px;
+	width: 450px;
+	}
+	
+img.vlag {
+	float: right;
+	margin: 10px;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	height: 120px;
+	width: 200px;
+	}

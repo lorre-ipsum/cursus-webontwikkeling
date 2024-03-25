@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="opmaak/opmaak.css">
+	<title>Rekenen</title>
+</head>
+
+<body>
+	<article>
+		<h2>Rekenen</h2>
+		<form name="rekenform">
+			<label for="som">4 + 5 = </label>
+			<input type="text" id="som" value=""> 
+		</form>
+	</article>
+	<footer>
+		<p><small>Dit is vb07b bij de cursus webontwikkeling.</small></p>
+	</footer>
+
+	<script>
+	// initialiseren van het invoerveld als constante
+	const invoerveld = document.querySelector('#som');
+	
+	// Nagaan of de uitkomst correct is of niet
+	uitrekenen = () => {
+	let uitkomst = invoerveld.value;
+	if (uitkomst == 9) {
+		alert("Joepie! Dit is correct!")
+		} else {
+		alert("Jammer, dit is fout.")}
+	}	
+	
+	// de functie uitrekenen aanroepen als de waarde van invoerveld wijzigt
+	invoerveld.addEventListener('change', uitrekenen);
+	</script> 
+
+</body>
+
+</html>

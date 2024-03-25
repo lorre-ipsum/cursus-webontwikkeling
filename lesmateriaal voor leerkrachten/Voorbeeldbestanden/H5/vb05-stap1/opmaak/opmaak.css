@@ -1,0 +1,64 @@
+body {
+	background-color: black;
+	}
+
+div#inhoud {
+	margin: auto;
+	width: 700px;
+	background-color: black;
+	}
+
+header, footer, article {
+	position: relative;
+	display: block;
+	font-family: Trebuchet, Trebuchet MS, Verdana;
+	background-color: black;
+	color: white;
+	padding: 5px;
+	margin: 10px;
+	}
+
+header {
+	-webkit-transform: rotate(-90deg);
+	float: left;
+	width: 1100px;
+	margin-left: -460px;
+	background-color: red;
+    position: fixed;
+	}
+	
+div#foto {
+	background-image: url("../plaatjes/mlking.jpg");
+	height: 240px;
+	margin-top: -8px;
+	}
+h1 {
+	font-size: 72px;
+	}
+
+h2 {
+	text-align: center;
+	}
+	
+article {
+	margin-left: 200px;
+	}
+
+p {
+	text-align: center;
+	}
+	
+video {
+	height: 240px;
+	width: 320px;
+	}
+	
+iframe {
+	border: none;
+	}
+
+footer {
+	clear: both;
+	background-color: grey;
+	color: white;
+	}

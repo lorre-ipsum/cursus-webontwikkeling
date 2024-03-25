@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Cuprum');
+
+body {
+	background-image: url("../plaatjes/gazon.png");
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: Cuprum;
+	color: #195900; /*donkergroen*/
+	}
+
+h1 {
+	font-size: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	}
+
+p {
+	font-size: 18px;	
+	}
+
+article {
+	border-style: solid;
+	border-width: 4px;
+	border-color: #195900; /*donkergroen*/
+	padding: 10px;
+	background-color: white;
+	width: 800px;
+	margin-bottom: 10px;
+}
+
+img {
+	height: 266px;
+	width: 400px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #195900; /*donkergroen*/
+}
+	
+.inhoud {
+	display: none;
+}
+
+#stap1 {
+	margin-left: 0px;
+	margin-top: 0px;
+	position: absolute;
+}
+
+#stap2 {
+	margin-left: 50px;
+	margin-top: 100px;
+	position: absolute;
+}
+
+#stap3 {
+	margin-left: 100px;
+	margin-top: 200px;
+	position: absolute;
+}
+
+#stap4 {
+	margin-left: 150px;
+	margin-top: 300px;
+	position: absolute;
+}
+
+footer {
+	margin-top: 10px;
+	background-color: black;
+	padding: 10px;
+	clear: both;
+	position: absolute; 
+	bottom: 0px;
+	width: 100%;
+	left: 0px;
+	}
+	
+footer p {
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	}
+

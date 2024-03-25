@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="opmaak/opmaak.css">
+	<title>Je levensloop</title>
+</head>
+
+<body>
+	<article>
+		<h1>Je levensloop</h1>
+		<form name="leeftijd">
+		<table>
+			<tr>
+				<td class="label"><label for="geboortedatum">Je geboortedatum (dd/mm/yyyy):</label></td>
+				<td class="invoer"><input type="text" id="geboortedatum"></td>
+			</tr><tr>
+				<td colspan="2" class="knop">
+					<input type="button" name="submit" id="funfactsknop" value="Fun facts">
+				</td>
+			</tr>
+		</table>
+		</form>
+	</article>
+	
+	<footer>
+		<p><small>Dit is vb09 bij de cursus webontwikkeling.</small></p>
+	</footer>
+	
+	<script>
+	// initialiseren van de funfactsknop als constante
+	const ffbutton = document.querySelector('#funfactsknop');
+	
+	// de keuze uitlezen
+	funfacts = () => { 
+		// De ingegeven geboortedatum valideren
+        const datum = document.leeftijd.geboortedatum.value;
+        let foutboodschap = ""; 
+		const datumelement = datum.split('/');
+		switch (true) {
+			case (datum =="") :
+				foutboodschap = "Gelieve een datum in te geven.";
+				break;
+			case (datumelement.length !== 3) :
+				foutboodschap = "Gelieve een datum in te geven volgens het formaat dd/mm/jjjj.";
+				break;
+		}
+		
+		// De foutmelding of de geboortedatum op het scherm zetten.
+		if (foutboodschap == "") {
+			alert("De datum is correct ingegeven")
+			} else { alert(foutboodschap)
+		}
+    }
+	
+	// de functie funfacts aanroepen als er op de knop wordt geklikt
+	ffbutton.addEventListener('click', funfacts);
+	</script> 
+
+</body>
+
+</html>

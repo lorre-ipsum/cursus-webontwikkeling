@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="opmaak/opmaak.css">
+	<title>Je levensloop</title>
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+</head>
+
+<body>
+	<article>
+		<h1>Je levensloop</h1>
+		<form name="leeftijd">
+		<table>
+			<tr>
+				<td class="label"><label for="geboortedatum">Je geboortedatum (dd/mm/yyyy):</label></td>
+				<td class="invoer"><input type="text" id="geboortedatum"></td>
+			</tr><tr>
+				<td colspan="2" class="knop">
+					<input type="button" name="submit" value="Fun facts" onclick="funfacts()">
+				</td>
+			</tr>
+		</table>
+		</form>
+	</article>
+	
+	<footer>
+		<p><small>Dit is vb09 bij de cursus webontwikkeling.</small></p>
+	</footer>
+	
+	<script>
+	// initialiseren van de funfactsknop als constante
+	const ffbutton = document.querySelector('#funfactsknop');
+	
+	// de resultaatpagina openen 
+	funfacts = () => {
+		const datum = document.leeftijd.geboortedatum.value;
+		if (datumvalidatie(datum) == true) {
+			localStorage.setItem('date', datum);
+			location.href = 'pages/resultaat.html';
+			}
+	}
+	
+	// de functie funfacts aanroepen als er op de knop wordt geklikt
+	ffbutton.addEventListener('click', funfacts);	 
+	</script> 
+
+</body>
+
+</html>

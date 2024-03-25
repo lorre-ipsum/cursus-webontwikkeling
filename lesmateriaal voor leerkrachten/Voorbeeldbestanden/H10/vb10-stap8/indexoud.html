@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang=nl>
+
+<head>
+	<meta charset=utf-8>
+	<meta name="robots" content="all">
+	<link rel="stylesheet" type="text/css" href="opmaak/opmaak.css">
+	<title>Tuinaanleg: graszoden leggen</title>
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/jquery-ui.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		// De overlay wordt gesloten door op "akkoord" te klikken
+		$("#akkoord").click(function(){
+			$("#overlay").fadeOut(2000);
+		});
+		// De inhoud van stap 1 wordt getoond
+		$("#titel1").click(function(){
+			$("#inhoud1").slideDown(1000);
+			$("#inhoud2").slideUp(1000);
+			$("#inhoud3").slideUp(1000);
+			$("#inhoud4").slideUp(1000);
+			$("img").animate({
+				height:'266px',
+				width:'400px'
+				}, 1000);
+			$("#stap1").animate({
+				backgroundColor:'#195900',
+				color:'white'
+				}, 1000);
+		});
+		// De inhoud van stap 2 wordt getoond
+		$("#titel2").click(function(){
+			$("#inhoud2").slideDown(1000);
+			$("#inhoud1").slideUp(1000);
+			$("#inhoud3").slideUp(1000);
+			$("#inhoud4").slideUp(1000);
+			$("img").animate({
+				height:'266px',
+				width:'400px'
+				}, 1000);
+			$("#stap2").animate({
+				backgroundColor:'#195900',
+				color:'white'
+				}, 1000);
+		});
+		// De inhoud van stap 3 wordt getoond
+		$("#titel3").click(function(){
+			$("#inhoud3").slideDown(1000);
+			$("#inhoud2").slideUp(1000);
+			$("#inhoud1").slideUp(1000);
+			$("#inhoud4").slideUp(1000);
+			$("img").animate({
+				height:'266px',
+				width:'400px'
+				}, 1000);
+			$("#stap3").animate({
+				backgroundColor:'#195900',
+				color:'white'
+				}, 1000);
+		});
+		// De inhoud van stap 4 wordt getoond
+		$("#titel4").click(function(){
+			$("#inhoud4").slideDown(1000);
+			$("#inhoud2").slideUp(1000);
+			$("#inhoud3").slideUp(1000);
+			$("#inhoud1").slideUp(1000);
+			$("img").animate({
+				height:'266px',
+				width:'400px'
+				}, 1000);
+			$("#stap4").animate({
+				backgroundColor:'#195900',
+				color:'white'
+				}, 1000);
+		});
+		// De inhoud van alle stappen wordt verborgen
+		$(".inhoud").click(function(){
+			$("#inhoud1").slideUp(1000);
+			$("#inhoud2").slideUp(1000);
+			$("#inhoud3").slideUp(1000);
+			$("#inhoud4").slideUp(1000);
+			$("img").animate({
+				height:'266px',
+				width:'400px'
+				}, 1000);
+		});
+		// De afbeeldingen worden groter weergegeven
+		$("img").mouseover(function(){
+			$("img").animate({
+				height:'533px',
+				width:'800px',
+				}, 3000);
+		});
+	});
+	</script>
+</head>
+
+<body>
+	<div id="overlay">
+		<div id="overlayinhoud"><p>Op deze website leer je hoe je met grasmatten een heel nieuw gazon kan aanleggen. Om grasmatten te leggen moet je wel wat kennis van zaken hebben en de toestemming van de eigenaar van de grond. Ben je nog niet meerderjarig en wil je de tuin van je ouders heraanleggen? Vraag hen dan expliciet om hun toestemming vooraleer je de tuin begint om te woelen.</p>
+		<p id="knoppen">
+		<button id="akkoord">Akkoord</button>
+		<button onclick="self.close()">Niet akkoord</button>
+		</p></div>
+	</div>
+
+	<article id="stap1">
+		<h1 id="titel1">1. De grond voorbereiden</h1>
+		<div class="inhoud" id="inhoud1"">
+		<p>Verwijder eerst alle begroeiing (struiken, onkruid, ...) en spit vervolgens de grond om.</p>
+		<p><img src="plaatjes/spitten.png" alt="Spitten"></p>
+		</div>
+	</article>
+	
+	<article id="stap2">
+		<h1 id="titel2">2. De grond egaliseren</h1>
+		<div class="inhoud" id="inhoud2">
+		<p>Trap de losgewerkte aarde aan en maak de grond effen - dat heet egaliseren. De grond moet helemaal vlak liggen, zonder putjes. Druk de grond tenslotte aan met een tuinwals.</p>
+		<p><img src="plaatjes/egaliseren.png" alt="Egaliseren"></p>
+		</div>
+	</article>
+	
+	<article id="stap3">
+		<h1 id="titel3">3. De grasmatten leggen</h1>
+		<div class="inhoud" id="inhoud3">
+		<p>Rol de grasmatten zo uit dat ze perfect op elkaar aansluiten. Leg ze in halfsteensverband. Snijd de grasmatten af met een scherp mes of met de spade.</p>
+		<p><img src="plaatjes/leggen.png" alt="Grasmatten leggen"></p>
+		</div>
+	</article>
+	
+	<article id="stap4">
+		<h1 id="titel4">4. De grasmatten sproeien</h1>
+		<div class="inhoud" id="inhoud4">
+		<p>Om de grasmatten wortel te laten schieten, moeten ze de eerste twee weken overvloedig besproeid worden. </p>
+		<p><img src="plaatjes/sproeien.png" alt="Sproeien"></p>
+		</div>
+	</article>
+	
+	<footer>
+		<p><small>Dit is vb10 bij het <a href="https://www.sleutelboek.eu" target="_blank">Sleutelboek Webontwikkeling</a>.</small></p>
+	</footer>
+	
+</body>
+
+</html>

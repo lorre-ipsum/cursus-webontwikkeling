@@ -1,0 +1,1 @@
+Dit is een eenvoudige oplossing die leerlingen kunnen toepassen zonder verdere kennis van php. Indien leerlingen willen werken met een overlay, moeten zij leren hoe zij php en javascript kunnen combineren. Leerlingen die een extra uitdaging nodig hebben, kunnen zelfstandig op zoek gaan naar een oplossing.

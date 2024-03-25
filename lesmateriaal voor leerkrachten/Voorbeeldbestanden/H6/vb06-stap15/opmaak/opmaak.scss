@@ -1,0 +1,137 @@
+@import "tekengrootte";
+
+@mixin centreren {
+	text-align: center;
+	}
+	
+@mixin rechts {
+	text-align: right;
+	}
+
+@mixin uitvullen {
+	text-align: justify;
+	}
+
+@font-face {
+    font-family: bookman;
+    src: url('bookos.ttf') format('truetype');
+	}
+
+body {
+	background-color: white;
+	}
+
+header, footer, article {
+	display: block;
+	}
+
+nav, article, footer {
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	}
+	
+header {
+	background-image: url("../plaatjes/agatha_christie.jpg");
+	background-size: cover;	
+	margin: -8px;
+	padding-top: 50px;
+	color: white;
+	height: 200px;
+	@include rechts;
+	}
+	
+h1 {
+    font-family: bookman;
+	font-size: $zeergroot;
+	letter-spacing: 0.25em;
+	background-color: black;
+	opacity: 0.5;
+	}
+
+nav {
+	margin-top: 25px;
+    font-size: $gewoon;
+    font-family: bookman;
+    background-color: #CCCCCC;  /*lichtgrijs*/
+	padding: 5px;
+	@include centreren;
+	}
+
+nav li {
+	display: inline; 
+	padding: 2%; 
+	font-size: $gewoon;
+	}
+
+nav li a {
+	text-decoration: none;
+	color: black;
+	}
+
+nav li:hover{
+	background-color: #BBBBBB; 	/*net iets donkerder lichtgrijs*/
+	text-shadow: 2px 2px 4px #FFFFFF; /*zwart*/
+	box-shadow: 2px 2px 4px #DDDDDD /*net iets lichter lichtgrijs*/
+}
+
+h2 {
+    font-family: bookman;
+	font-size: $groot;
+	letter-spacing: 0.4em;
+	}
+
+li {
+    font-family: bookman;
+	font-size: $klein;
+	}	
+
+p {
+    font-family: bookman;
+	font-size: $klein;
+	@include uitvullen;
+	}	
+
+article {
+	float: left;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 10px;
+	}
+	
+footer {
+	background-color: grey;
+	padding: 5px;
+	clear: both;
+	}
+	
+footer p {
+	@include centreren;
+	}
+	
+.verwijzing {
+	font: {
+		style: italic;
+		weight: bold;
+		size: $zeerklein;
+		}
+	}
+	
+img.omhoog {
+	float: right;
+	}
+	
+iframe {
+	height: 300px;
+	width: 100%;
+}
+
+figure {
+	margin-top: 100px;
+	@include centreren;
+	}
+
+figcaption p {
+	@include centreren;
+	margin-bottom: 100px;
+	}
